@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 
-@st.cache_data(show_spinner="Fitting calibration models...")
+@st.cache_resource(show_spinner="Fitting calibration models...")
 def cached_fit_pipeline(uploaded_file_bytes):
     import io
     config = AppConfig()
