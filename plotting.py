@@ -364,8 +364,10 @@ def export_chart_buttons(fig, filename):
                         height=1100,
                         scale=2,
                     )
-            except Exception:
-                st.warning("برای خروجی با کیفیت بالا نصب کن: pip install kaleido")
+            except Exception as e:
+                import traceback
+                st.error("PNG export failed")
+                st.code(traceback.format_exc())
 
     with col2:
         if png_key in st.session_state:
